@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Waiting For Our Little Angel Rutuja 👶</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Strongest Mommy ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
 
@@ -22,11 +22,11 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#ffd6e8,#fff0c9,#dff8ff);
+    background:linear-gradient(135deg,#ffdce8,#fff3d1,#e2f8ff);
     position:relative;
 }
 
-/* Animated Background */
+/* Background Blur Circles */
 
 .bg{
     position:absolute;
@@ -39,30 +39,30 @@ body{
     position:absolute;
     border-radius:50%;
     background:rgba(255,255,255,0.25);
-    animation:float 15s linear infinite;
+    animation:float 16s linear infinite;
 }
 
 .circle:nth-child(1){
-    width:220px;
-    height:220px;
-    left:10%;
-    top:75%;
+    width:240px;
+    height:240px;
+    left:5%;
+    top:80%;
 }
 
 .circle:nth-child(2){
-    width:150px;
-    height:150px;
+    width:180px;
+    height:180px;
     left:70%;
-    top:80%;
-    animation-duration:12s;
+    top:90%;
+    animation-duration:13s;
 }
 
 .circle:nth-child(3){
-    width:280px;
-    height:280px;
-    left:55%;
-    top:90%;
-    animation-duration:18s;
+    width:300px;
+    height:300px;
+    left:45%;
+    top:100%;
+    animation-duration:20s;
 }
 
 @keyframes float{
@@ -74,19 +74,37 @@ body{
     }
 }
 
-/* Card */
+/* Floating Hearts */
+
+.heart{
+    position:absolute;
+    font-size:22px;
+    opacity:0.7;
+    animation:heartFloat 10s linear infinite;
+}
+
+@keyframes heartFloat{
+    0%{
+        transform:translateY(100vh) scale(1);
+    }
+    100%{
+        transform:translateY(-120vh) scale(1.8);
+    }
+}
+
+/* Main Card */
 
 .card{
     width:92%;
-    max-width:430px;
+    max-width:450px;
     padding:35px 28px;
     border-radius:35px;
-    background:rgba(255,255,255,0.20);
+    background:rgba(255,255,255,0.18);
     backdrop-filter:blur(18px);
     box-shadow:0 15px 40px rgba(0,0,0,0.15);
     text-align:center;
     position:relative;
-    z-index:10;
+    z-index:5;
     animation:fade 1.8s ease;
 }
 
@@ -104,7 +122,7 @@ body{
 /* Baby Emoji */
 
 .baby{
-    font-size:75px;
+    font-size:78px;
     animation:bounce 2s infinite;
 }
 
@@ -118,15 +136,17 @@ body{
 }
 
 h1{
-    color:#ff4f8a;
     margin-top:10px;
+    color:#ff4f89;
     font-size:2rem;
 }
 
+/* Emotional Text */
+
 .sub{
-    margin-top:10px;
+    margin-top:16px;
     color:#555;
-    line-height:1.8;
+    line-height:1.9;
     font-size:15px;
 }
 
@@ -141,10 +161,10 @@ h1{
 }
 
 .time{
-    width:82px;
-    height:90px;
+    width:85px;
+    height:95px;
     background:white;
-    border-radius:20px;
+    border-radius:22px;
     box-shadow:0 8px 20px rgba(0,0,0,0.08);
     display:flex;
     flex-direction:column;
@@ -153,7 +173,7 @@ h1{
 }
 
 .time h2{
-    color:#ff4f8a;
+    color:#ff4f89;
     font-size:28px;
 }
 
@@ -162,42 +182,42 @@ h1{
     font-size:13px;
 }
 
-/* Date */
+/* Delivery Date */
 
 .date{
     margin-top:22px;
+    color:#444;
     font-size:18px;
     font-weight:600;
-    color:#444;
 }
 
-/* Love Button */
+/* Buttons */
 
 button{
-    margin-top:28px;
+    margin-top:20px;
     border:none;
     padding:14px 28px;
     border-radius:40px;
-    background:linear-gradient(45deg,#ff5d97,#ff7eb3);
+    background:linear-gradient(45deg,#ff5d97,#ff8db7);
     color:white;
-    font-size:16px;
+    font-size:15px;
     cursor:pointer;
     transition:0.3s;
     box-shadow:0 10px 20px rgba(255,93,151,.35);
 }
 
 button:hover{
-    transform:scale(1.06);
+    transform:scale(1.05);
 }
 
-/* Message */
+/* Love Message */
 
 #message{
-    margin-top:20px;
-    color:#ff3b82;
+    margin-top:18px;
+    color:#ff3c7d;
     font-weight:600;
-    line-height:1.7;
-    min-height:60px;
+    line-height:1.8;
+    min-height:70px;
     transition:.4s;
 }
 
@@ -210,56 +230,55 @@ button:hover{
     font-style:italic;
 }
 
-/* Floating Hearts */
-
-.heart{
-    position:absolute;
-    color:white;
-    font-size:20px;
-    animation:hearts 10s linear infinite;
-    opacity:0.7;
-}
-
-@keyframes hearts{
-    0%{
-        transform:translateY(100vh) scale(1);
-    }
-    100%{
-        transform:translateY(-120vh) scale(1.8);
-    }
-}
-
 </style>
 </head>
 
 <body>
 
+<!-- Background -->
 <div class="bg">
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
 </div>
 
+<!-- Floating Hearts -->
 <div class="heart" style="left:10%; animation-duration:11s;">💖</div>
-<div class="heart" style="left:28%; animation-duration:8s;">✨</div>
-<div class="heart" style="left:45%; animation-duration:12s;">🧸</div>
-<div class="heart" style="left:65%; animation-duration:9s;">👶</div>
-<div class="heart" style="left:82%; animation-duration:10s;">💕</div>
+<div class="heart" style="left:25%; animation-duration:9s;">✨</div>
+<div class="heart" style="left:42%; animation-duration:12s;">🧸</div>
+<div class="heart" style="left:60%; animation-duration:10s;">👶</div>
+<div class="heart" style="left:80%; animation-duration:13s;">💕</div>
+
+<!-- Main Card -->
 
 <div class="card">
 
     <div class="baby">🤰💞</div>
 
-    <h1>Our Little Angel Rutuja</h1>
+    <h1>For My Strongest Rutu Mommy</h1>
 
     <p class="sub">
-        Dear Rutu Mommy ❤️<br><br>
-        Inside you grows a tiny miracle made with pure love.  
-        Every moment you smile, our baby feels warmth and happiness.  
-        You are already the world's most beautiful mother 🌸
+        Dear Mommy ❤️<br><br>
+
+        I know these days are not easy...  
+        the pain, tiredness, mood swings, sleepless nights —  
+        but inside all this, you are creating a beautiful little life 👶💖
+        <br><br>
+
+        Every heartbeat of our baby carries your love.  
+        Your smile is already the safest home in the world 🌸
+        <br><br>
+
+        Very soon, tiny fingers will hold your hand,  
+        little eyes will search for you,  
+        and every painful moment will turn into unforgettable happiness ✨
+        <br><br>
+
+        So whenever you feel weak, just remember —
+        you are already someone's whole world ❤️
     </p>
 
-    <!-- TIMER -->
+    <!-- Timer -->
 
     <div class="timer-box">
 
@@ -290,9 +309,23 @@ button:hover{
         21 • 06 • 2026
     </div>
 
+    <!-- Music -->
+
+    <audio id="bgMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+    </audio>
+
+    <button onclick="playMusic()">
+        Play Calm Music 🎵
+    </button>
+
+    <br>
+
     <button onclick="showMessage()">
         Touch For Love 💌
     </button>
+
+    <!-- Dynamic Message -->
 
     <div id="message"></div>
 
@@ -316,11 +349,20 @@ function updateTimer(){
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
 
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
 
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
 
     document.getElementById("days").innerHTML = days;
     document.getElementById("hours").innerHTML = hours;
@@ -332,23 +374,27 @@ setInterval(updateTimer,1000);
 
 updateTimer();
 
-/* Romantic Psychological Messages */
+/* Emotional Messages */
 
 const messages = [
 
-"Your baby already knows your voice and your love 💖",
+"Your pain is temporary... but the love coming into your life is forever ❤️",
 
-"Mommy, you are stronger and more beautiful every single day 🌸",
+"Every difficult moment is bringing your little angel closer 👶",
 
-"Every tiny kick is baby's way of saying ‘I love you’ 👶",
+"You are already the safest place in the world for your baby 🌸",
 
-"A happy mother creates the safest world for her baby ✨",
+"One day your baby will call you ‘Mama’ and every pain will feel worth it 💖",
 
-"Your smile gives peace to two hearts right now ❤️",
+"Your strength today will become your baby's happiness tomorrow ✨",
 
-"Very soon little fingers will hold your hand forever 🧸",
+"Behind every kick is a tiny soul waiting to hug you forever 🧸",
 
-"You are not just creating life... you are creating love 💞"
+"Mommy, you are doing better than you think ❤️",
+
+"Your baby will smile because of your love first 😊",
+
+"Even on hard days, you are creating a miracle 💞"
 
 ];
 
@@ -357,6 +403,12 @@ function showMessage(){
     const random = Math.floor(Math.random() * messages.length);
 
     document.getElementById("message").innerHTML = messages[random];
+}
+
+/* Music */
+
+function playMusic(){
+    document.getElementById("bgMusic").play();
 }
 
 </script>

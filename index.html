@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moon Waiting For Baby 🌙</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Baby Is Texting Mommy 💌</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,71 +13,141 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Quicksand',sans-serif;
 }
 
 body{
+    font-family:'Poppins',sans-serif;
     min-height:100vh;
     overflow:hidden;
-    background:linear-gradient(to bottom,#1f1147,#35206b,#ff9ec7);
+    background:linear-gradient(180deg,#ffcadf,#ffe9f3,#fff7dd,#dff7ff);
     display:flex;
     justify-content:center;
     align-items:center;
+    padding:20px;
     position:relative;
 }
 
-/* Stars */
+/* Animated Background */
 
-.star{
+.bg{
     position:absolute;
-    width:3px;
-    height:3px;
-    background:white;
-    border-radius:50%;
-    animation:twinkle 3s infinite ease-in-out;
+    inset:0;
+    overflow:hidden;
 }
 
-@keyframes twinkle{
-    0%,100%{
-        opacity:.3;
-    }
-    50%{
-        opacity:1;
-    }
-}
-
-/* Moon */
-
-.moon{
+.bubble{
     position:absolute;
-    top:60px;
-    width:120px;
-    height:120px;
-    background:#fff8dc;
+    bottom:-120px;
     border-radius:50%;
-    box-shadow:0 0 50px rgba(255,255,255,0.7);
+    background:rgba(255,255,255,.25);
+    animation:rise linear infinite;
 }
 
-/* Card */
+@keyframes rise{
+    from{
+        transform:translateY(0) rotate(0deg);
+    }
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+    }
+}
 
-.card{
-    width:92%;
-    max-width:430px;
-    padding:35px 28px;
-    border-radius:35px;
-    background:rgba(255,255,255,0.12);
-    backdrop-filter:blur(16px);
-    box-shadow:0 15px 40px rgba(0,0,0,0.3);
-    text-align:center;
+/* Phone */
+
+.phone{
+    width:100%;
+    max-width:390px;
+    height:720px;
+    background:#111;
+    border-radius:45px;
+    padding:14px;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+    position:relative;
     z-index:5;
-    color:white;
-    animation:fade 1.5s ease;
+    animation:phoneShow 1s ease;
 }
 
-@keyframes fade{
+@keyframes phoneShow{
     from{
         opacity:0;
-        transform:translateY(40px);
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* Screen */
+
+.screen{
+    width:100%;
+    height:100%;
+    border-radius:35px;
+    overflow:hidden;
+    background:#f8f8f8;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Header */
+
+.header{
+    background:linear-gradient(45deg,#ff5f97,#ff90b8);
+    padding:18px;
+    color:white;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.header img{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:2px solid white;
+}
+
+.header h2{
+    font-size:18px;
+}
+
+.header p{
+    font-size:12px;
+    opacity:.9;
+}
+
+/* Chat */
+
+.chat{
+    flex:1;
+    padding:18px;
+    overflow:auto;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    background:
+    linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)),
+    url('https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+}
+
+/* Message */
+
+.msg{
+    max-width:80%;
+    padding:14px;
+    border-radius:18px;
+    font-size:14px;
+    line-height:1.7;
+    animation:msgPop .5s ease;
+}
+
+@keyframes msgPop{
+    from{
+        opacity:0;
+        transform:translateY(20px);
     }
     to{
         opacity:1;
@@ -85,104 +155,119 @@ body{
     }
 }
 
-/* Baby */
-
-.baby{
-    font-size:75px;
-    animation:floatBaby 3s infinite ease-in-out;
+.left{
+    background:white;
+    color:#444;
+    border-bottom-left-radius:5px;
+    align-self:flex-start;
 }
 
-@keyframes floatBaby{
+.right{
+    background:linear-gradient(45deg,#ff5f97,#ff8eb6);
+    color:white;
+    border-bottom-right-radius:5px;
+    align-self:flex-end;
+}
+
+/* Baby Typing */
+
+.typing{
+    display:flex;
+    gap:4px;
+    align-items:center;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+    background:#999;
+    border-radius:50%;
+    animation:typing 1s infinite;
+}
+
+.dot:nth-child(2){
+    animation-delay:.2s;
+}
+
+.dot:nth-child(3){
+    animation-delay:.4s;
+}
+
+@keyframes typing{
     0%,100%{
         transform:translateY(0);
+        opacity:.4;
     }
     50%{
-        transform:translateY(-10px);
+        transform:translateY(-5px);
+        opacity:1;
     }
-}
-
-h1{
-    margin-top:10px;
-    font-size:2rem;
-}
-
-/* Text */
-
-.text{
-    margin-top:18px;
-    line-height:1.9;
-    font-size:15px;
-    color:#f7f7f7;
 }
 
 /* Timer */
 
 .timer{
-    margin-top:28px;
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
+    padding:14px;
+    background:white;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
 }
 
 .box{
-    width:82px;
-    height:92px;
-    background:rgba(255,255,255,0.18);
-    border-radius:20px;
-    backdrop-filter:blur(8px);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    background:#fff1f6;
+    border-radius:15px;
+    padding:10px;
+    text-align:center;
 }
 
 .box h2{
-    font-size:28px;
-    color:#fff;
+    color:#ff4f89;
+    font-size:20px;
 }
 
 .box span{
-    font-size:12px;
-    color:#eee;
+    font-size:11px;
+    color:#777;
 }
 
-/* Buttons */
+/* Button */
+
+.btn-area{
+    padding:15px;
+    background:white;
+}
 
 button{
-    margin-top:20px;
+    width:100%;
     border:none;
-    padding:14px 28px;
+    padding:14px;
     border-radius:40px;
-    background:white;
-    color:#ff4f92;
+    background:linear-gradient(45deg,#ff5f97,#ff90b8);
+    color:white;
     font-size:15px;
-    font-weight:700;
+    font-weight:600;
     cursor:pointer;
     transition:.3s;
 }
 
 button:hover{
-    transform:scale(1.05);
+    transform:scale(1.02);
 }
 
-/* Message */
+/* Responsive */
 
-#msg{
-    margin-top:18px;
-    min-height:60px;
-    color:#fff4c8;
-    line-height:1.8;
-    font-weight:600;
-}
+@media(max-width:450px){
 
-/* Footer */
+    .phone{
+        height:95vh;
+        border-radius:30px;
+    }
 
-.footer{
-    margin-top:25px;
-    font-size:14px;
-    color:#f2f2f2;
-    font-style:italic;
+    .screen{
+        border-radius:22px;
+    }
+
 }
 
 </style>
@@ -190,121 +275,159 @@ button:hover{
 
 <body>
 
-<div class="moon"></div>
+<!-- Background -->
 
-<!-- Stars -->
-<script>
-for(let i=0;i<100;i++){
-    let star=document.createElement("div");
-    star.className="star";
+<div class="bg" id="bg"></div>
 
-    star.style.left=Math.random()*100+"%";
-    star.style.top=Math.random()*100+"%";
+<!-- Phone -->
 
-    star.style.animationDuration=(Math.random()*3+2)+"s";
+<div class="phone">
 
-    document.body.appendChild(star);
-}
-</script>
+    <div class="screen">
 
-<div class="card">
+        <!-- Header -->
 
-    <div class="baby">🌙👶💖</div>
+        <div class="header">
 
-    <h1>Baby Is Coming...</h1>
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=500&auto=format&fit=crop">
 
-    <div class="text">
+            <div>
+                <h2>Your Little Baby papa payjet 👶</h2>
+                <p>typing...</p>
+            </div>
 
-        Hey Mommy ❤️
-        <br><br>
-
-        Tonight the moon looks softer...
-        because somewhere inside you,
-        a tiny little miracle is growing 🌸
-        <br><br>
-
-        I know some nights are painful,
-        some days feel heavy...
-        but your baby already feels your love in every heartbeat 💞
-        <br><br>
-
-        Very soon...
-        little sleepy eyes will look at you,
-        tiny hands will hold you,
-        and your world will become full of warm cuddles 👶
-        <br><br>
-
-        Until then...
-        smile a little more 🌙✨
-        because your baby already loves hearing Mommy happy ❤️
-
-    </div>
-
-    <!-- Timer -->
-
-    <div class="timer">
-
-        <div class="box">
-            <h2 id="days">0</h2>
-            <span>Days</span>
         </div>
 
-        <div class="box">
-            <h2 id="hours">0</h2>
-            <span>Hours</span>
+        <!-- Chat -->
+
+        <div class="chat" id="chat">
+
+            <div class="msg left">
+                Hey Mommy ❤️
+            </div>
+
+            <div class="msg left">
+                I know these days are hard sometimes 🌸
+            </div>
+
+            <div class="msg right">
+                But you are so strong 🥺
+            </div>
+
+            <div class="msg left">
+                Every heartbeat of yours feels like home to me 💞
+            </div>
+
+            <div class="msg right">
+                Please smile Mommy ✨
+            </div>
+
+            <div class="msg left">
+                Very soon I’ll be in your arms 👶
+            </div>
+
+            <div class="msg right">
+                And I promise...
+                one tiny smile from me will heal every painful moment ❤️
+            </div>
+
+            <!-- Typing -->
+
+            <div class="msg left typing">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
         </div>
 
-        <div class="box">
-            <h2 id="minutes">0</h2>
-            <span>Minutes</span>
+        <!-- Timer -->
+
+        <div class="timer">
+
+            <div class="box">
+                <h2 id="days">0</h2>
+                <span>DAYS</span>
+            </div>
+
+            <div class="box">
+                <h2 id="hours">0</h2>
+                <span>HOURS</span>
+            </div>
+
+            <div class="box">
+                <h2 id="minutes">0</h2>
+                <span>MIN</span>
+            </div>
+
+            <div class="box">
+                <h2 id="seconds">0</h2>
+                <span>SEC</span>
+            </div>
+
         </div>
 
-        <div class="box">
-            <h2 id="seconds">0</h2>
-            <span>Seconds</span>
+        <!-- Button -->
+
+        <div class="btn-area">
+            <button onclick="newMessage()">
+                New Message From Baby 💌
+            </button>
         </div>
 
-    </div>
-
-    <button onclick="showMessage()">
-        Message From Baby 💌
-    </button>
-
-    <div id="msg"></div>
-
-    <div class="footer">
-        “The smallest feet make the biggest footprints in Mommy's heart.” 👣
     </div>
 
 </div>
 
 <script>
 
+/* Animated Background */
+
+const bg=document.getElementById("bg");
+
+for(let i=0;i<20;i++){
+
+    const bubble=document.createElement("div");
+
+    bubble.classList.add("bubble");
+
+    const size=Math.random()*100+40;
+
+    bubble.style.width=size+"px";
+    bubble.style.height=size+"px";
+
+    bubble.style.left=Math.random()*100+"%";
+
+    bubble.style.animationDuration=(Math.random()*10+10)+"s";
+
+    bg.appendChild(bubble);
+}
+
 /* Countdown */
 
-const targetDate = new Date("2026-06-21T00:00:00").getTime();
+const target=new Date("2026-06-21T00:00:00").getTime();
 
-function timer(){
+function updateTimer(){
 
-    const now = new Date().getTime();
+    const now=new Date().getTime();
 
-    const distance = targetDate - now;
+    const distance=target-now;
 
-    const days = Math.floor(distance / (1000*60*60*24));
+    const days=Math.floor(distance/(1000*60*60*24));
 
-    const hours = Math.floor(
-        (distance % (1000*60*60*24))
-        / (1000*60*60)
+    const hours=Math.floor(
+        (distance%(1000*60*60*24))
+        /(1000*60*60)
     );
 
-    const minutes = Math.floor(
-        (distance % (1000*60*60))
-        / (1000*60)
+    const minutes=Math.floor(
+        (distance%(1000*60*60))
+        /(1000*60)
     );
 
-    const seconds = Math.floor(
-        (distance % (1000*60))
-        / 1000
+    const seconds=Math.floor(
+        (distance%(1000*60))
+        /1000
     );
 
     document.getElementById("days").innerHTML=days;
@@ -313,37 +436,45 @@ function timer(){
     document.getElementById("seconds").innerHTML=seconds;
 }
 
-setInterval(timer,1000);
+setInterval(updateTimer,1000);
 
-timer();
+updateTimer();
 
-/* Baby Messages */
+/* Messages */
 
 const messages=[
 
-"Mommy... I can already feel your love ❤️",
+"Mommy... thank you for carrying me with so much love ❤️",
 
-"Every heartbeat of yours feels like home to me 👶",
+"I already know your heartbeat and I love it 💞",
 
-"Please smile Mommy... your smile reaches me too 🌸",
+"Please don't be sad Mommy 🌸",
 
-"I am waiting to hold your finger forever 🧸",
+"I am growing safely because of you 👶",
 
-"You are my whole world already 💞",
+"Your hugs are waiting for me ✨",
 
-"Mommy, thank you for being strong for me ✨",
+"I can’t wait to call you Mama 🥺",
 
-"I cannot wait to sleep in your arms ❤️",
-
-"Your voice is already my favorite sound 🌙"
+"You are already my favorite person 💖"
 
 ];
 
-function showMessage(){
+function newMessage(){
 
-    const random=Math.floor(Math.random()*messages.length);
+    const chat=document.getElementById("chat");
 
-    document.getElementById("msg").innerHTML=messages[random];
+    const msg=document.createElement("div");
+
+    msg.classList.add("msg","left");
+
+    msg.innerHTML=messages[
+        Math.floor(Math.random()*messages.length)
+    ];
+
+    chat.appendChild(msg);
+
+    chat.scrollTop=chat.scrollHeight;
 }
 
 </script>

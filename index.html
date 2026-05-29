@@ -1,67 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Fin Finance</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Waiting For Our Little Angel 👶</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffd6e8,#fff0c9,#dff8ff);
+    position:relative;
+}
+
+/* Animated Background */
+
+.bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.25);
+    animation:float 15s linear infinite;
+}
+
+.circle:nth-child(1){
+    width:220px;
+    height:220px;
+    left:10%;
+    top:75%;
+}
+
+.circle:nth-child(2){
+    width:150px;
+    height:150px;
+    left:70%;
+    top:80%;
+    animation-duration:12s;
+}
+
+.circle:nth-child(3){
+    width:280px;
+    height:280px;
+    left:55%;
+    top:90%;
+    animation-duration:18s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0deg);
+    }
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+    }
+}
+
+/* Card */
+
+.card{
+    width:92%;
+    max-width:430px;
+    padding:35px 28px;
+    border-radius:35px;
+    background:rgba(255,255,255,0.20);
+    backdrop-filter:blur(18px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    text-align:center;
+    position:relative;
+    z-index:10;
+    animation:fade 1.8s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Baby Emoji */
+
+.baby{
+    font-size:75px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+h1{
+    color:#ff4f8a;
+    margin-top:10px;
+    font-size:2rem;
+}
+
+.sub{
+    margin-top:10px;
+    color:#555;
+    line-height:1.8;
+    font-size:15px;
+}
+
+/* Timer */
+
+.timer-box{
+    margin-top:28px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.time{
+    width:82px;
+    height:90px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.time h2{
+    color:#ff4f8a;
+    font-size:28px;
+}
+
+.time span{
+    color:#777;
+    font-size:13px;
+}
+
+/* Date */
+
+.date{
+    margin-top:22px;
+    font-size:18px;
+    font-weight:600;
+    color:#444;
+}
+
+/* Love Button */
+
+button{
+    margin-top:28px;
+    border:none;
+    padding:14px 28px;
+    border-radius:40px;
+    background:linear-gradient(45deg,#ff5d97,#ff7eb3);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 10px 20px rgba(255,93,151,.35);
+}
+
+button:hover{
+    transform:scale(1.06);
+}
+
+/* Message */
+
+#message{
+    margin-top:20px;
+    color:#ff3b82;
+    font-weight:600;
+    line-height:1.7;
+    min-height:60px;
+    transition:.4s;
+}
+
+/* Footer */
+
+.footer{
+    margin-top:25px;
+    color:#666;
+    font-size:14px;
+    font-style:italic;
+}
+
+/* Floating Hearts */
+
+.heart{
+    position:absolute;
+    color:white;
+    font-size:20px;
+    animation:hearts 10s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes hearts{
+    0%{
+        transform:translateY(100vh) scale(1);
+    }
+    100%{
+        transform:translateY(-120vh) scale(1.8);
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-  <h2>Fin Finance</h2>
-</header>
+<div class="bg">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
 
-<section class="hero">
-  <h1>Trusted Financial Solutions for Your Future</h1>
-  <p>Fast, secure and hassle-free loans & insurance services</p>
-  <button onclick="applyNow()">Apply Now</button>
-</section>
+<div class="heart" style="left:10%; animation-duration:11s;">💖</div>
+<div class="heart" style="left:28%; animation-duration:8s;">✨</div>
+<div class="heart" style="left:45%; animation-duration:12s;">🧸</div>
+<div class="heart" style="left:65%; animation-duration:9s;">👶</div>
+<div class="heart" style="left:82%; animation-duration:10s;">💕</div>
 
-<section class="section">
-  <h2>Our Services</h2>
+<div class="card">
 
-  <div class="services">
+    <div class="baby">🤰💞</div>
 
-    <div class="card">
-      <h3>Personal Loans</h3>
-      <p>Quick loans for your personal needs</p>
+    <h1>Our Little Angel</h1>
+
+    <p class="sub">
+        Dear Mommy ❤️<br><br>
+        Inside you grows a tiny miracle made with pure love.  
+        Every moment you smile, our baby feels warmth and happiness.  
+        You are already the world's most beautiful mother 🌸
+    </p>
+
+    <!-- TIMER -->
+
+    <div class="timer-box">
+
+        <div class="time">
+            <h2 id="days">0</h2>
+            <span>Days</span>
+        </div>
+
+        <div class="time">
+            <h2 id="hours">0</h2>
+            <span>Hours</span>
+        </div>
+
+        <div class="time">
+            <h2 id="minutes">0</h2>
+            <span>Minutes</span>
+        </div>
+
+        <div class="time">
+            <h2 id="seconds">0</h2>
+            <span>Seconds</span>
+        </div>
+
     </div>
 
-    <div class="card">
-      <h3>Business Loans</h3>
-      <p>Grow your business with easy funding</p>
+    <div class="date">
+        Expected Delivery 👶 <br>
+        21 • 06 • 2026
     </div>
 
-    <div class="card">
-      <h3>Gold Loans</h3>
-      <p>Instant cash against gold</p>
+    <button onclick="showMessage()">
+        Touch For Love 💌
+    </button>
+
+    <div id="message"></div>
+
+    <div class="footer">
+        “Mommy's heartbeat is baby's first love song.” 🎵
     </div>
 
-    <div class="card">
-      <h3>Loan Against Property</h3>
-      <p>Unlock your property value</p>
-    </div>
+</div>
 
-    <div class="card">
-      <h3>Vehicle Loans</h3>
-      <p>Auto & Two-wheeler financing</p>
-    </div>
+<script>
 
-    <div class="card">
-      <h3>Insurance</h3>
-      <p>Life, Health & General insurance</p>
-    </div>
+/* Countdown Timer */
 
-  </div>
-</section>
+const targetDate = new Date("2026-06-21T00:00:00").getTime();
 
-<footer>
-  <p>© 2026 Fin Finance | All Rights Reserved</p>
-</footer>
+function updateTimer(){
 
-<script src="script.js"></script>
+    const now = new Date().getTime();
+
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+}
+
+setInterval(updateTimer,1000);
+
+updateTimer();
+
+/* Romantic Psychological Messages */
+
+const messages = [
+
+"Your baby already knows your voice and your love 💖",
+
+"Mommy, you are stronger and more beautiful every single day 🌸",
+
+"Every tiny kick is baby's way of saying ‘I love you’ 👶",
+
+"A happy mother creates the safest world for her baby ✨",
+
+"Your smile gives peace to two hearts right now ❤️",
+
+"Very soon little fingers will hold your hand forever 🧸",
+
+"You are not just creating life... you are creating love 💞"
+
+];
+
+function showMessage(){
+
+    const random = Math.floor(Math.random() * messages.length);
+
+    document.getElementById("message").innerHTML = messages[random];
+}
+
+</script>
+
 </body>
 </html>

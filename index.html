@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Strongest Mommy ❤️</title>
+<title>Moon Waiting For Baby 🌙</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,105 +13,71 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Quicksand',sans-serif;
 }
 
 body{
     min-height:100vh;
     overflow:hidden;
+    background:linear-gradient(to bottom,#1f1147,#35206b,#ff9ec7);
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#ffdce8,#fff3d1,#e2f8ff);
     position:relative;
 }
 
-/* Background Blur Circles */
+/* Stars */
 
-.bg{
+.star{
     position:absolute;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-}
-
-.circle{
-    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
     border-radius:50%;
-    background:rgba(255,255,255,0.25);
-    animation:float 16s linear infinite;
+    animation:twinkle 3s infinite ease-in-out;
 }
 
-.circle:nth-child(1){
-    width:240px;
-    height:240px;
-    left:5%;
-    top:80%;
-}
-
-.circle:nth-child(2){
-    width:180px;
-    height:180px;
-    left:70%;
-    top:90%;
-    animation-duration:13s;
-}
-
-.circle:nth-child(3){
-    width:300px;
-    height:300px;
-    left:45%;
-    top:100%;
-    animation-duration:20s;
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(0) rotate(0deg);
+@keyframes twinkle{
+    0%,100%{
+        opacity:.3;
     }
-    100%{
-        transform:translateY(-120vh) rotate(360deg);
+    50%{
+        opacity:1;
     }
 }
 
-/* Floating Hearts */
+/* Moon */
 
-.heart{
+.moon{
     position:absolute;
-    font-size:22px;
-    opacity:0.7;
-    animation:heartFloat 10s linear infinite;
+    top:60px;
+    width:120px;
+    height:120px;
+    background:#fff8dc;
+    border-radius:50%;
+    box-shadow:0 0 50px rgba(255,255,255,0.7);
 }
 
-@keyframes heartFloat{
-    0%{
-        transform:translateY(100vh) scale(1);
-    }
-    100%{
-        transform:translateY(-120vh) scale(1.8);
-    }
-}
-
-/* Main Card */
+/* Card */
 
 .card{
     width:92%;
-    max-width:450px;
+    max-width:430px;
     padding:35px 28px;
     border-radius:35px;
-    background:rgba(255,255,255,0.18);
-    backdrop-filter:blur(18px);
-    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(16px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
     text-align:center;
-    position:relative;
     z-index:5;
-    animation:fade 1.8s ease;
+    color:white;
+    animation:fade 1.5s ease;
 }
 
 @keyframes fade{
     from{
         opacity:0;
-        transform:translateY(50px);
+        transform:translateY(40px);
     }
     to{
         opacity:1;
@@ -119,14 +85,14 @@ body{
     }
 }
 
-/* Baby Emoji */
+/* Baby */
 
 .baby{
-    font-size:78px;
-    animation:bounce 2s infinite;
+    font-size:75px;
+    animation:floatBaby 3s infinite ease-in-out;
 }
 
-@keyframes bounce{
+@keyframes floatBaby{
     0%,100%{
         transform:translateY(0);
     }
@@ -137,58 +103,48 @@ body{
 
 h1{
     margin-top:10px;
-    color:#ff4f89;
     font-size:2rem;
 }
 
-/* Emotional Text */
+/* Text */
 
-.sub{
-    margin-top:16px;
-    color:#555;
+.text{
+    margin-top:18px;
     line-height:1.9;
     font-size:15px;
+    color:#f7f7f7;
 }
 
 /* Timer */
 
-.timer-box{
+.timer{
     margin-top:28px;
     display:flex;
     justify-content:center;
-    gap:12px;
+    gap:10px;
     flex-wrap:wrap;
 }
 
-.time{
-    width:85px;
-    height:95px;
-    background:white;
-    border-radius:22px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+.box{
+    width:82px;
+    height:92px;
+    background:rgba(255,255,255,0.18);
+    border-radius:20px;
+    backdrop-filter:blur(8px);
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
 }
 
-.time h2{
-    color:#ff4f89;
+.box h2{
     font-size:28px;
+    color:#fff;
 }
 
-.time span{
-    color:#777;
-    font-size:13px;
-}
-
-/* Delivery Date */
-
-.date{
-    margin-top:22px;
-    color:#444;
-    font-size:18px;
-    font-weight:600;
+.box span{
+    font-size:12px;
+    color:#eee;
 }
 
 /* Buttons */
@@ -198,35 +154,34 @@ button{
     border:none;
     padding:14px 28px;
     border-radius:40px;
-    background:linear-gradient(45deg,#ff5d97,#ff8db7);
-    color:white;
+    background:white;
+    color:#ff4f92;
     font-size:15px;
+    font-weight:700;
     cursor:pointer;
-    transition:0.3s;
-    box-shadow:0 10px 20px rgba(255,93,151,.35);
+    transition:.3s;
 }
 
 button:hover{
     transform:scale(1.05);
 }
 
-/* Love Message */
+/* Message */
 
-#message{
+#msg{
     margin-top:18px;
-    color:#ff3c7d;
-    font-weight:600;
+    min-height:60px;
+    color:#fff4c8;
     line-height:1.8;
-    min-height:70px;
-    transition:.4s;
+    font-weight:600;
 }
 
 /* Footer */
 
 .footer{
     margin-top:25px;
-    color:#666;
     font-size:14px;
+    color:#f2f2f2;
     font-style:italic;
 }
 
@@ -235,180 +190,160 @@ button:hover{
 
 <body>
 
-<!-- Background -->
-<div class="bg">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-</div>
+<div class="moon"></div>
 
-<!-- Floating Hearts -->
-<div class="heart" style="left:10%; animation-duration:11s;">💖</div>
-<div class="heart" style="left:25%; animation-duration:9s;">✨</div>
-<div class="heart" style="left:42%; animation-duration:12s;">🧸</div>
-<div class="heart" style="left:60%; animation-duration:10s;">👶</div>
-<div class="heart" style="left:80%; animation-duration:13s;">💕</div>
+<!-- Stars -->
+<script>
+for(let i=0;i<100;i++){
+    let star=document.createElement("div");
+    star.className="star";
 
-<!-- Main Card -->
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
+
+    star.style.animationDuration=(Math.random()*3+2)+"s";
+
+    document.body.appendChild(star);
+}
+</script>
 
 <div class="card">
 
-    <div class="baby">🤰💞</div>
+    <div class="baby">🌙👶💖</div>
 
-    <h1>For My Strongest Rutu Mommy</h1>
+    <h1>Baby Is Coming...</h1>
 
-    <p class="sub">
-        Dear Mommy ❤️<br><br>
+    <div class="text">
 
-        I know these days are not easy...  
-        the pain, tiredness, mood swings, sleepless nights —  
-        but inside all this, you are creating a beautiful little life 👶💖
+        Hey Mommy ❤️
         <br><br>
 
-        Every heartbeat of our baby carries your love.  
-        Your smile is already the safest home in the world 🌸
+        Tonight the moon looks softer...
+        because somewhere inside you,
+        a tiny little miracle is growing 🌸
         <br><br>
 
-        Very soon, tiny fingers will hold your hand,  
-        little eyes will search for you,  
-        and every painful moment will turn into unforgettable happiness ✨
+        I know some nights are painful,
+        some days feel heavy...
+        but your baby already feels your love in every heartbeat 💞
         <br><br>
 
-        So whenever you feel weak, just remember —
-        you are already someone's whole world ❤️
-    </p>
+        Very soon...
+        little sleepy eyes will look at you,
+        tiny hands will hold you,
+        and your world will become full of warm cuddles 👶
+        <br><br>
+
+        Until then...
+        smile a little more 🌙✨
+        because your baby already loves hearing Mommy happy ❤️
+
+    </div>
 
     <!-- Timer -->
 
-    <div class="timer-box">
+    <div class="timer">
 
-        <div class="time">
+        <div class="box">
             <h2 id="days">0</h2>
             <span>Days</span>
         </div>
 
-        <div class="time">
+        <div class="box">
             <h2 id="hours">0</h2>
             <span>Hours</span>
         </div>
 
-        <div class="time">
+        <div class="box">
             <h2 id="minutes">0</h2>
             <span>Minutes</span>
         </div>
 
-        <div class="time">
+        <div class="box">
             <h2 id="seconds">0</h2>
             <span>Seconds</span>
         </div>
 
     </div>
 
-    <div class="date">
-        Expected Delivery 👶 <br>
-        21 • 06 • 2026
-    </div>
-
-    <!-- Music -->
-
-    <audio id="bgMusic" loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
-    </audio>
-
-    <button onclick="playMusic()">
-        Play Calm Music 🎵
-    </button>
-
-    <br>
-
     <button onclick="showMessage()">
-        Touch For Love 💌
+        Message From Baby 💌
     </button>
 
-    <!-- Dynamic Message -->
-
-    <div id="message"></div>
+    <div id="msg"></div>
 
     <div class="footer">
-        “Mommy's heartbeat is baby's first love song.” 🎵
+        “The smallest feet make the biggest footprints in Mommy's heart.” 👣
     </div>
 
 </div>
 
 <script>
 
-/* Countdown Timer */
+/* Countdown */
 
 const targetDate = new Date("2026-06-21T00:00:00").getTime();
 
-function updateTimer(){
+function timer(){
 
     const now = new Date().getTime();
 
     const distance = targetDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const days = Math.floor(distance / (1000*60*60*24));
 
     const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
+        (distance % (1000*60*60*24))
+        / (1000*60*60)
     );
 
     const minutes = Math.floor(
-        (distance % (1000 * 60 * 60))
-        / (1000 * 60)
+        (distance % (1000*60*60))
+        / (1000*60)
     );
 
     const seconds = Math.floor(
-        (distance % (1000 * 60))
+        (distance % (1000*60))
         / 1000
     );
 
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+    document.getElementById("days").innerHTML=days;
+    document.getElementById("hours").innerHTML=hours;
+    document.getElementById("minutes").innerHTML=minutes;
+    document.getElementById("seconds").innerHTML=seconds;
 }
 
-setInterval(updateTimer,1000);
+setInterval(timer,1000);
 
-updateTimer();
+timer();
 
-/* Emotional Messages */
+/* Baby Messages */
 
-const messages = [
+const messages=[
 
-"Your pain is temporary... but the love coming into your life is forever ❤️",
+"Mommy... I can already feel your love ❤️",
 
-"Every difficult moment is bringing your little angel closer 👶",
+"Every heartbeat of yours feels like home to me 👶",
 
-"You are already the safest place in the world for your baby 🌸",
+"Please smile Mommy... your smile reaches me too 🌸",
 
-"One day your baby will call you ‘Mama’ and every pain will feel worth it 💖",
+"I am waiting to hold your finger forever 🧸",
 
-"Your strength today will become your baby's happiness tomorrow ✨",
+"You are my whole world already 💞",
 
-"Behind every kick is a tiny soul waiting to hug you forever 🧸",
+"Mommy, thank you for being strong for me ✨",
 
-"Mommy, you are doing better than you think ❤️",
+"I cannot wait to sleep in your arms ❤️",
 
-"Your baby will smile because of your love first 😊",
-
-"Even on hard days, you are creating a miracle 💞"
+"Your voice is already my favorite sound 🌙"
 
 ];
 
 function showMessage(){
 
-    const random = Math.floor(Math.random() * messages.length);
+    const random=Math.floor(Math.random()*messages.length);
 
-    document.getElementById("message").innerHTML = messages[random];
-}
-
-/* Music */
-
-function playMusic(){
-    document.getElementById("bgMusic").play();
+    document.getElementById("msg").innerHTML=messages[random];
 }
 
 </script>
